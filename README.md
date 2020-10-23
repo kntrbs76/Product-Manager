@@ -26,11 +26,11 @@ DELETE: localhost:8080/api/v1/products/2 - delete product with ID 2
 
 :cyclone:Требования
 -----------
-Git;
+:heavy_minus_sign: Git;
 
-Maven;
+:heavy_minus_sign: Maven;
 
-Docker.
+:heavy_minus_sign: Docker.
 
 :cyclone: Installation and launch
 -----------
