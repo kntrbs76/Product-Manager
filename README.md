@@ -5,7 +5,7 @@ Web application on Java using Spring Boot for managing goods at warehouse.
 :cyclone:Description
 -----------
 The application does four basic (CRUD) functions: 
-- Create; 
+:heavy_minus_sign: Create; 
 - Read;
 - Update; 
 - Delete for each position in the list.
