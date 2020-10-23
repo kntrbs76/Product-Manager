@@ -40,6 +40,6 @@ DELETE: localhost:8080/api/v1/products/2 - delete product with ID 2
 
 3)Building the project: mvn install;
 
-4)Сreating docker image docker: build -t docker-project_manager;
+4)Сreating docker image docker: build -t docker-product_manager;
 
-5)docker run -p 8080:8080 docker-project_manager.
+5)docker run -p 8080:8080 docker-product_manager.
