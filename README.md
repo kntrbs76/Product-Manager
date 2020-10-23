@@ -1,6 +1,6 @@
 :cyclone:Project Manager
 -----------
-Web application on Java for managing goods at warehouse.
+Web application on Java using Spring Boot for managing goods at warehouse.
 
 :cyclone:Description
 -----------
