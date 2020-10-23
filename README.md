@@ -24,7 +24,7 @@ PUT: localhost:8080/api/v1/products/ Request body: { "id": 2, "name": "Name2", "
 
 DELETE: localhost:8080/api/v1/products/2 - delete product with ID 2
 
-:cyclone:Требования
+:cyclone: Requirements
 -----------
 :heavy_minus_sign: Git;
 
