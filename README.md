@@ -34,7 +34,7 @@ DELETE: localhost:8080/api/v1/products/2 - delete product with ID 2
 
 :cyclone: Installation and launch
 -----------
-1)Cloning the repository: git clone - https://github.com/WoodySide/ProjectManager.git;
+1)Cloning the repository: git clone - https://github.com/WoodySide/Product-Manager.git;
 
 2)Go to the  directory, with the project itself;
 
