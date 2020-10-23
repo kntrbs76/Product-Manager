@@ -37,8 +37,8 @@
           <td><input type="checkbox" class=""  value="prod.reserved" name="reserved" th:href="${prod.reserved}"></td>
 
 
-          <th ><a class="btn btn-warning" th:href="@{product-update/{id}(id=${prod.id})}">Edit</a></th>
-          <th ><a th:href="@{product-delete/{id}(id=${prod.id})}"><i class="fa fa-trash"></i></a></th>
+          <th ><a class="btn btn-success" th:href="@{product-update/{id}(id=${prod.id})}">Edit</a></th>
+          <th ><a class="btn btn-danger" th:href="@{product-delete/{id}(id=${prod.id})}">Delete</a></th>
         </tr>
 
       </table>
