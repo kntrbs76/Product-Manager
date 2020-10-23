@@ -7,8 +7,11 @@ Web application on Java using Spring Boot for managing goods at warehouse.
 The application does four basic (CRUD) functions: 
 
 :heavy_minus_sign: Create; 
+
 :heavy_minus_sign:  Read;
+
 :heavy_minus_sign:  Update; 
+
 :heavy_minus_sign:  Delete for each position in the list.
 
 :cyclone: Rest requests
