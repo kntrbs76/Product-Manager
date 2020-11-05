@@ -1,5 +1,6 @@
 package ru.alex.webapp.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,21 +8,20 @@ import ru.alex.webapp.model.Product;
 import ru.alex.webapp.repository.ProductRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ProductService {
 
     private final ProductRepository productRepository;
 
-    @Autowired
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
 
-    public Product findById(Long id) {
+    public Optional <Product> findById(Long id) {
         log.info("In ProductService findById {}", id);
-        return productRepository.getOne(id);
+        return productRepository.findById(id);
+
     }
 
     public List<Product> findAll() {
@@ -34,8 +34,8 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    public Product saveProduct(Product product) {
-        log.info("In ProductService saveProduct {}", product);
+    public Product save(Product product) {
+        log.info("In ProductService save {}", product);
         return productRepository.save(product);
     }
 }
