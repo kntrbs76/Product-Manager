@@ -2,6 +2,8 @@
 -----------
 Web application on Java using Spring Boot for managing goods at warehouse.
 
+![Product_Manager(Git Hub)](https://user-images.githubusercontent.com/72156897/98236378-50f78c00-1f74-11eb-9b7d-eb4bb603c69b.png)
+
 :cyclone:Description
 -----------
 The application does four basic (CRUD) functions: 
@@ -18,9 +20,9 @@ The application does four basic (CRUD) functions:
 -----------
 GET: localhost:8080/api/v1/products/ - get all products GET: localhost:8080/api/v1/products/1 - get product with ID 1
 
-POST: localhost:8080/api/v1/products/ Request body: { "name": "Name1", "description": "Description1", "create_date": "2020-11-01", "place_storage": "1" }
+POST: localhost:8080/api/v1/products/ Request body: { "name": "Name1", "description": "Description1", "place_storage": "1", "create_date": "2020-11-01", "price": "3" }
 
-PUT: localhost:8080/api/v1/products/ Request body: { "id": 2, "name": "Name2", "description": "Description2", "create_date": "2020-11-02", "place_storage": "2" }
+PUT: localhost:8080/api/v1/products/ Request body: { "name": "Name2", "description": "Description2","place_storage": "2", "create_date": "2020-11-02", "price": "10" }
 
 DELETE: localhost:8080/api/v1/products/2 - delete product with ID 2
 
