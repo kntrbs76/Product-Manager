@@ -25,7 +25,7 @@ public class ProductService {
     }
 
     public List<Product> findAll() {
-        log.info("In ProductService find all");
+        log.info("In ProductService findall");
         return productRepository.findAll();
     }
 

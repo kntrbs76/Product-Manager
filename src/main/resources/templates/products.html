@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-  <div class=ex1><h1>Product Manager</h1>
+  <div class=ex1><h1 style="font-family: 'Open Sans',serif; font-size: 40px">Product Manager</h1>
   </div>
   <main id="app">
     <router-view></router-view>
@@ -49,11 +49,12 @@
       </a>
     </div>
     <div class="filters row">
-      <div class="form-group col-sm-3">
+      <div class="form-group col-sm-4">
         <input placeholder="Search" v-model="searchKey" class="form-control" id="search-element" requred/>
       </div>
+
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped" style="font-family: 'Open Sans',serif; font-size: 20px">
       <thead class="thead-dark">
       <tr>
         <th>Name</th>
@@ -61,7 +62,7 @@
         <th>Place Storage</th>
         <th>Date</th>
         <th>Price</th>
-        <th>Reserved</th>
+        <th>Reserved</th >
         <th class="col-sm-2">Actions</th>
       </tr>
       </thead>
@@ -89,11 +90,11 @@
           </label>
         </td>
         <td>
-          <a class="btn btn-warning btn-group-lg">
-            <router-link :to="{name: 'product-edit', params: {product_id: product.id}}">Edit</router-link>
+          <a class="btn btn-success btn-group-lg">
+          <div class="textcolor"><router-link :to="{name: 'product-edit', params: {product_id: product.id}}">Edit</router-link></div>
           </a>
-          <a class="btn btn-danger btn-group-lg">
-            <router-link :to="{name: 'product-delete', params: {product_id: product.id}}">Delete</router-link>
+          <a class="btn btn-danger btn-group-lg" >
+           <div class="textcolor"> <router-link :to="{name: 'product-delete', params: {product_id: product.id}}">Delete</router-link></div>
           </a>
         </td>
       </tr>
@@ -102,32 +103,38 @@
   </div>
 </template>
 
-<template id="add-product">
-  <div>
+
+<template id="add-product" >
+  <div style="font-family: 'Open Sans',serif; font-size: 18px">
     <h2>Add new product</h2>
     <form @submit="createProduct">
       <div class="form-group">
-        <label for="add-name">Name</label>
-        <input class="form-control" id="add-name" v-model="product.name" required/>
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Name</span>
+        <label for="add-name"></label>
+        <input class="form-field" type="text"  id="add-name" v-model="product.name" required/>
       </div>
       <div class="form-group">
-        <label for="add-description">Description</label>
-        <textarea class="form-control" id="add-description" rows="10" v-model="product.description"></textarea>
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Description</span>
+        <label for="add-description"></label>
+        <textarea class="form-field"  type="text" id="add-description" rows="10" v-model="product.description"></textarea>
       </div>
       <div class="form-group">
-        <label for="add-place_storage">Place Storage</label>
-        <textarea class="form-control" id="add-place_storage" rows="1" v-model="product.place_storage" required></textarea>
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Place Storage</span>
+        <label for="add-place_storage"></label>
+        <textarea class="form-field"  type="text" id="add-place_storage" rows="1" v-model="product.place_storage" required></textarea>
       </div>
       <div class="form-group">
-        <label for="add-date">Date</label>
-        <input type="datetime-local" class="form-control" id="add-date"  v-model="product.create_date" required/>
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Date</span>
+        <label for="add-date"></label>
+        <input type="datetime-local" class="form-field" id="add-date"  v-model="product.create_date" required/>
       </div>
       <div class="form-group">
-        <label for="add-price">Price, <span class="glyphicon glyphicon-euro"></span></label>
-        <input type="number" class="form-control" id="add-price" v-model="product.price"/>
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Price<span class="glyphicon glyphicon-euro"></span></span>
+        <label for="add-price"></label>
+        <input class="form-field" type="text"  id="add-price" v-model="product.price"/>
       </div>
-      <button type="submit" class="btn btn-primary">Create</button>
-      <a class="btn btn-default">
+      <button style="font-family: 'Open Sans',serif; font-size: 20px" type="submit" class="btn btn-primary">Create</button>
+      <a style="font-family: 'Open Sans',serif; font-size: 20px" class="btn btn-default">
         <router-link to="/">Cancel</router-link>
       </a>
     </form>
@@ -136,30 +143,30 @@
 
 <template id="product-edit">
   <div>
-    <h2>Edit product</h2>
+    <h2 style="font-family:'Open Sans',serif; font-size: 27px">Edit product</h2>
     <form @submit="updateProduct">
-      <div class="form-group">
+      <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px">
         <label for="edit-name">Name</label>
         <input class="form-control" id="edit-name" v-model="product.name" required/>
       </div>
-      <div class="form-group">
-        <label for="edit-description">Description</label>
+      <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px" >
+        <label for="edit-description" >Description</label>
         <textarea class="form-control" id="edit-description" rows="3" v-model="product.description"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px">
         <label for="edit-place_storage">Place Storage</label>
         <textarea class="form-control" id="edit-place_storage" rows="1" v-model="product.place_storage"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px">
         <label for="edit-create_date">Date</label>
         <input type="date" class="form-control" id="edit-create_date" rows="1" v-model="product.create_date"/>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px">
         <label for="edit-price">Price, <span class="glyphicon glyphicon-euro"></span></label>
         <input type="number" class="form-control" id="edit-price" v-model="product.price"/>
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
-      <a class="btn btn-default">
+      <button style="font-family:'Open Sans',serif; font-size: 20px" type="submit" class="btn btn-primary">Save</button>
+      <a class="btn btn-default" style="font-family:'Open Sans',serif; font-size: 20px">
         <router-link to="/">Cancel</router-link>
       </a>
     </form>
@@ -178,6 +185,9 @@
     </form>
   </div>
 </template>
+
+
+
 
 <script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router@3.0.2/dist/vue-router.js"></script>
