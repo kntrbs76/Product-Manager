@@ -27,13 +27,16 @@ public class Product {
     private String description;
 
     @Column(name = "place_storage")
+    @NotNull(message = "Place storage cannot be null")
     private BigInteger place_storage;
 
     @DateTimeFormat
     @Column(name = "create_date")
+    @NotNull(message = "Date cannot be null")
     private Date create_date;
 
     @Column(name = "price")
+    @NotNull(message = "Price cannot be null")
     private BigDecimal price;
 
     @CreationTimestamp
