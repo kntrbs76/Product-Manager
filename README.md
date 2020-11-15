@@ -2,7 +2,7 @@
 -----------
 Web application on Java using Spring Boot for managing goods at warehouse.
 
-![Product_Manager(Git Hub)](https://user-images.githubusercontent.com/72156897/98236378-50f78c00-1f74-11eb-9b7d-eb4bb603c69b.png)
+![nGp08QL](https://user-images.githubusercontent.com/72156897/99144372-5b054300-2676-11eb-85b2-c360b2b3293d.jpeg)
 
 :cyclone:Description
 -----------
