@@ -19,22 +19,29 @@
     <router-view></router-view>
   </main>
 </div>
+
 <template id="product">
-  <div>
-    <h2>{{ product.name }}</h2>
-    <b>Description: </b>
-    <div>{{ product.description }}</div>
-    <b>Place Storage:</b>
-    <div>{{ product.place_storage }}</div>
-    <b>Date:</b>
-    <div>{{ product.create_date }}</div>
-    <b>Price:</b>
-    <div>{{ product.price }}<span class="glyphicon glyphicon-euro"></span></div>
-    <br/>
-    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-    <a>
-      <router-link to="/">Back to product list</router-link>
-    </a>
+  <div class="customSet">
+    <section class="customHeader" id="sec">
+      <h2>View</h2>
+      <ul>
+        <li>
+          <span class="fa fa-code"></span>
+          <p><h2>{{ product.name }}</h2>
+          <b>Description: </b>
+          <div >{{ product.description }}</div>
+          <b>Place Storage:</b>
+          <div>{{ product.place_storage }}</div>
+          <b>Date:</b>
+          <div>{{ product.create_date }}</div>
+          <b>Price:</b>
+          <div>{{ product.price }}</div>
+          <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+          <br/>
+          <a>
+            <div class="customSet"><router-link to="/">Back to product list</router-link></div>
+          </a></p>
+        </li>
   </div>
 </template>
 
@@ -49,8 +56,13 @@
       </a>
     </div>
     <div class="filters row">
+<<<<<<< HEAD
       <div class="form-group col-sm-4">
         <input placeholder="Search" v-model="searchKey" class="form-control" id="search-element" requred/>
+=======
+      <div class="form-group col-sm-3">
+        <input placeholder="Search" v-model="searchKey" class="form-control" id="search-element" required />
+>>>>>>> dev
       </div>
 
     </div>
@@ -68,8 +80,8 @@
       </thead>
       <tbody>
       <tr v-for="product in filteredProducts">
-        <!-- tr v-for="product in products" -->
-        <!-- tr v-for="product in products | filterBy searchKey in 'name'" -->
+<!--         tr v-for="product in products" -->
+<!--         tr v-for="product in products | filterBy searchKey in 'name'" -->
         <td>
           <a>
             <router-link :to="{name: 'product', params: {product_id: product.id}}">{{ product.name }}</router-link>
@@ -107,6 +119,7 @@
 <template id="add-product" >
   <div style="font-family: 'Open Sans',serif; font-size: 18px">
     <h2>Add new product</h2>
+    <hr class="my-4">
     <form @submit="createProduct">
       <div class="form-group">
         <span style="font-family: 'Open Sans',serif; font-size: 18px">Name</span>
@@ -133,6 +146,10 @@
         <label for="add-price"></label>
         <input class="form-field" type="text"  id="add-price" v-model="product.price"/>
       </div>
+<<<<<<< HEAD
+=======
+      <hr class="my-4">
+>>>>>>> dev
       <button style="font-family: 'Open Sans',serif; font-size: 20px" type="submit" class="btn btn-primary">Create</button>
       <a style="font-family: 'Open Sans',serif; font-size: 20px" class="btn btn-default">
         <router-link to="/">Cancel</router-link>
@@ -144,6 +161,7 @@
 <template id="product-edit">
   <div>
     <h2 style="font-family:'Open Sans',serif; font-size: 27px">Edit product</h2>
+<<<<<<< HEAD
     <form @submit="updateProduct">
       <div class="form-group" style="font-family:'Open Sans',serif; font-size: 19px">
         <label for="edit-name">Name</label>
@@ -167,6 +185,38 @@
       </div>
       <button style="font-family:'Open Sans',serif; font-size: 20px" type="submit" class="btn btn-primary">Save</button>
       <a class="btn btn-default" style="font-family:'Open Sans',serif; font-size: 20px">
+=======
+    <hr class="my-4">
+    <form @submit="updateProduct">
+      <div class="form-group">
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Name</span>
+        <label for="edit-name"></label>
+        <input class="form-field" type="text"  id="edit-name" v-model="product.name" required/>
+      </div>
+      <div class="form-group">
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Description</span>
+        <label for="edit-description"></label>
+        <textarea class="form-field"  type="text" id="edit-description" rows="10" v-model="product.description"></textarea>
+      </div>
+      <div class="form-group">
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Place Storage</span>
+        <label for="edit-place_storage"></label>
+        <textarea class="form-field"  type="text" id="edit-place_storage" rows="1" v-model="product.place_storage" required></textarea>
+      </div>
+      <div class="form-group">
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Date</span>
+        <label for="edit-date"></label>
+        <input type="datetime-local" class="form-field" id="edit-date" v-model="product.create_date" required/>
+      </div>
+      <div class="form-group">
+        <span style="font-family: 'Open Sans',serif; font-size: 18px">Price<span class="glyphicon glyphicon-euro"></span></span>
+        <label for="edit-price"></label>
+        <input class="form-field" type="text"  id="edit-price" v-model="product.price"/>
+      </div>
+      <hr class="my-4">
+      <button  style="font-family: 'Open Sans',serif; font-size: 20px" type="submit" class="btn btn-primary">Save</button>
+      <a style="font-family: 'Open Sans',serif; font-size: 20px" class="btn btn-default">
+>>>>>>> dev
         <router-link to="/">Cancel</router-link>
       </a>
     </form>
@@ -187,8 +237,11 @@
 </template>
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dev
 <script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router@3.0.2/dist/vue-router.js"></script>
 <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>

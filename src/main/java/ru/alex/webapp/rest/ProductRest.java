@@ -72,4 +72,3 @@ public class ProductRest {
         return ResponseEntity.ok().build();
     }
 }
-

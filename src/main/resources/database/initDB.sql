@@ -10,8 +10,11 @@ CREATE TABLE IF NOT EXISTS goods (
     price BIGINT NOT NULL
 );
 
+<<<<<<< HEAD
 --Populate DB
 INSERT INTO goods (name, description, place_storage, create_date, price)
 VALUES ('Name1','Description1','1','2010-11-13', 3);
 INSERT INTO goods (name, description, place_storage,create_date , price)
 VALUES ('Name2','Description2','2','2014-09-23', 10);
+=======
+>>>>>>> dev
