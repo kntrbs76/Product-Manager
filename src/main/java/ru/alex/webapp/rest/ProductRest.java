@@ -20,13 +20,13 @@ import java.util.Optional;
 public class ProductRest {
     private final ProductService productService;
 
-    @GetMapping(name = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"), @ApiResponse(code = 500, message = "Internal server error"), @ApiResponse(code = 404, message = "Product not found")})
     public ResponseEntity<List<Product>> findAll() {
         return ResponseEntity.ok(productService.findAll());
     }
 
-    @PostMapping(name = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> create(@Valid @RequestBody Product product) {
         return ResponseEntity.ok(productService.save(product));
     }

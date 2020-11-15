@@ -2,7 +2,6 @@ package ru.alex.webapp.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.alex.webapp.model.Product;
 import ru.alex.webapp.repository.ProductRepository;
@@ -38,4 +37,5 @@ public class ProductService {
         log.info("In ProductService save {}", product);
         return productRepository.save(product);
     }
+
 }
