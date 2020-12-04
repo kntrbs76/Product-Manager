@@ -31,6 +31,7 @@ public class ProductRest {
         return ResponseEntity.ok(productService.save(product));
     }
 
+
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"), @ApiResponse(code = 500, message = "Internal server error"), @ApiResponse(code = 404, message = "Product not found")})
     public ResponseEntity<Product> findById(@PathVariable Long id) {
@@ -63,7 +64,7 @@ public class ProductRest {
 
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"), @ApiResponse(code = 500, message = "Internal server error"), @ApiResponse(code = 404, message = "Product not found")})
-    public ResponseEntity delete(@PathVariable Long id) {
+    public ResponseEntity<Product> delete(@PathVariable Long id) {
         if(!productService.findById(id).isPresent()) {
             log.error("Id " + id + " does not exist");
             ResponseEntity.notFound().build();
