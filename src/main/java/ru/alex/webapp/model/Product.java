@@ -8,6 +8,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -26,14 +28,15 @@ public class Product {
     private Long id;
 
     @Column(name = "name", length = 512)
-    @NotNull(message = "Name cannot be null")
+    @NotEmpty(message = "Name should not be empty")
     private String name;
 
     @Column(name = "description", length = 1025)
+    @NotEmpty(message = "Description should not be empty")
     private String description;
 
     @Column(name = "place_storage")
-    @NotNull(message = "Place storage cannot be null")
+    @Min(value = 0, message = "Place storage should be greater than zero")
     private BigInteger place_storage;
 
     @DateTimeFormat
